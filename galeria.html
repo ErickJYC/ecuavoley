@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | Ecuavóley: Pasión Ecuatoriana</title>
+</head>
+<body>
+    <!-- HEADER: presenta el sitio web. -->
+    <header id="inicio">
+        <h1>Ecuavóley: Pasión Ecuatoriana</h1>
+        <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
+    </header>
+
+    <!-- NAV: contiene los enlaces relativos a las cinco páginas. -->
+    <nav aria-label="Navegación principal">
+    <a href="index.html">Inicio</a> |
+    <a href="historia.html">Historia</a> |
+    <a href="reglas.html">Reglas</a> |
+    <a href="posiciones.html">Posiciones</a> |
+    <a href="galeria.html">Galería</a>
+</nav>
+    <hr>
+
+    <!-- MAIN: contenido principal y único de esta página. -->
+    <main>
+        <section>
+            <h2>Galería de ecuavóley</h2>
+            <p>Estas imágenes son <strong>ilustraciones originales</strong> creadas para explicar elementos del deporte; no son fotografías de partidos reales.</p>
+            <figure>
+                <img src="images/balon.svg" alt="Ilustración de un balón utilizado para representar el ecuavóley" width="400">
+                <figcaption>Ilustración 5. Balón deportivo.</figcaption>
+            </figure>
+            <figure>
+                <img src="images/partido.svg" alt="Ilustración de dos equipos en una cancha de ecuavóley" width="400">
+                <figcaption>Ilustración 6. Encuentro entre equipos.</figcaption>
+            </figure>
+            <figure>
+                <img src="images/cancha.svg" alt="Ilustración de una cancha dividida por una red" width="400">
+                <figcaption>Ilustración 7. La cancha.</figcaption>
+            </figure>
+        </section>
+        <section>
+            <h2>Recurso multimedia: sonido de silbato</h2>
+            <p>Escucha una <em>simulación sonora</em> de un silbato deportivo creada para este proyecto.</p>
+            <!-- AUDIO: archivo local, accesible mediante ruta relativa. -->
+            <audio controls preload="none">
+                <source src="audio/silbato.wav" type="audio/wav">
+                Tu navegador no admite el elemento de audio.
+            </audio>
+            <p>Si no se reproduce, <a href="audio/silbato.wav">abre el archivo de audio</a>.</p>
+        </section>
+        <aside>
+            <h2>¿Sabías que...?</h2>
+            <p>La galería usa la etiqueta <code>&lt;figure&gt;</code> para agrupar cada imagen y <code>&lt;figcaption&gt;</code> para describirla.</p>
+        </aside>
+    </main>
+
+    <!-- FOOTER: cambia el nombre y el correo antes de entregar. -->
+    <footer>
+    <hr>
+    <p>Estudiante: [Erick Josue Yunga Chimbo]<br>
+    Correo: <a href="mailto:erickyunga89@gmailcom">erickyunga89@gmailcom</a></p>
+    <p>&copy; 2026 - Todos los derechos reservados.</p>
+    <p><a href="#inicio">Volver al inicio de esta página</a></p>
+</footer>
+</body>
+</html>
