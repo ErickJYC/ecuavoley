@@ -1,108 +1,160 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería | Ecuavóley: Pasión Ecuatoriana</title>
 </head>
+
 <body>
-    <!-- HEADER: presenta el sitio web. -->
+
+    <!-- HEADER: encabezado del sitio web -->
     <header id="inicio">
         <h1>Ecuavóley: Pasión Ecuatoriana</h1>
         <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
     </header>
 
-    <!-- NAV: contiene los enlaces relativos a las cinco páginas. -->
+    <!-- NAV: navegación entre las cinco páginas -->
     <nav aria-label="Navegación principal">
-    <a href="index.html">Inicio</a> |
-    <a href="historia.html">Historia</a> |
-    <a href="reglas.html">Reglas</a> |
-    <a href="posiciones.html">Posiciones</a> |
-    <a href="galeria.html">Galería</a>
-</nav>
+        <a href="index.html">Inicio</a> |
+        <a href="historia.html">Historia</a> |
+        <a href="reglas.html">Reglas</a> |
+        <a href="posiciones.html">Posiciones</a> |
+        <a href="galeria.html">Galería</a>
+    </nav>
+
     <hr>
 
-    <!-- MAIN: contenido principal y único de esta página. -->
+    <!-- MAIN: contenido principal -->
     <main>
+
+        <!-- SECCIÓN DE FOTOGRAFÍAS -->
         <section>
             <h2>Galería de ecuavóley</h2>
-            <p>Estas imágenes son <strong>ilustraciones originales</strong> creadas para explicar elementos del deporte; no son fotografías de partidos reales.</p>
-            
-<figure>
-    <img src="images/balon.png"
-         alt="Fotografía de un balón Mikasa"
-         width="400">
-    <figcaption>
-        Fotografía 5. Balón Mikasa utilizado para jugar ecuavóley.
-    </figcaption>
-</figure>
 
-<figure>
-    <img src="images/partido.png"
-         alt="Jugadores disputando un partido de ecuavóley"
-         width="400">
-    <figcaption>
-        Fotografía 6. Encuentro de ecuavóley entre equipos.
-    </figcaption>
-</figure>
+            <p>
+                En esta galería se presentan
+                <strong>fotografías reales de ecuavóley</strong>
+                que muestran el balón, los jugadores y
+                las canchas donde se practica este deporte.
+            </p>
 
-<figure>
-    <img src="images/cancha.png"
-         alt="Cancha de ecuavóley durante un partido nocturno"
-         width="400">
-    <figcaption>
-        Fotografía 7. Cancha de ecuavóley con jugadores y espectadores.
-    </figcaption>
-</figure>
+            <figure>
+                <img src="images/balon.png"
+                     alt="Fotografía de un balón Mikasa"
+                     width="400">
+
+                <figcaption>
+                    Fotografía 5. Balón Mikasa utilizado para jugar ecuavóley.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/partido.png"
+                     alt="Jugadores disputando un partido de ecuavóley"
+                     width="400">
+
+                <figcaption>
+                    Fotografía 6. Encuentro de ecuavóley entre equipos.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/cancha.png"
+                     alt="Cancha de ecuavóley durante un partido nocturno"
+                     width="400">
+
+                <figcaption>
+                    Fotografía 7. Cancha de ecuavóley con jugadores y espectadores.
+                </figcaption>
+            </figure>
 
         </section>
 
+        <!-- SECCIÓN DEL VIDEO -->
+        <section>
+            <h2>Video de ecuavóley</h2>
 
-<section>
-    <h2>Video de ecuavóley</h2>
+            <p>
+                En el siguiente video se puede observar
+                cómo se desarrolla un partido de ecuavóley.
+            </p>
 
-    <p>
-        En el siguiente video se puede observar
-        cómo se desarrolla un partido de ecuavóley.
-    </p>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/byC-B38Zo18"
+                title="Partido de ecuavóley"
+                allowfullscreen>
+            </iframe>
 
-    <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/byC-B38Zo18"
-        title="Partido de ecuavóley"
-        allowfullscreen>
-    </iframe>
+            <p>
+                <a href="https://www.youtube.com/watch?v=byC-B38Zo18"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ver el video directamente en YouTube
+                </a>
+            </p>
+        </section>
 
-    <p>
-        <a href="https://www.youtube.com/watch?v=byC-B38Zo18"
-           target="_blank"
-           rel="noopener noreferrer">
-            Ver el video directamente en YouTube
-        </a>
-    </p>
-</section>
+        <!-- SECCIÓN DEL AUDIO -->
+        <section>
+            <h2>Sonido de silbato</h2>
 
+            <p>
+                Escucha el sonido de un silbato deportivo
+                utilizado durante los partidos.
+            </p>
 
+            <audio controls>
+                <source src="audio/silbato.wav" type="audio/wav">
+                Tu navegador no admite la reproducción de audio.
+            </audio>
+        </section>
+
+        <!-- ASIDE: información complementaria -->
         <aside>
             <h2>¿Sabías que...?</h2>
+
             <p>
-    En esta galería se presentan
-    <strong>fotografías reales de ecuavóley</strong>
-    que muestran el balón, los jugadores
-    y las canchas donde se practica este deporte.
-</p>
+                En HTML5, la etiqueta
+                <code>&lt;figure&gt;</code>
+                permite agrupar imágenes y
+                <code>&lt;figcaption&gt;</code>
+                permite agregar una descripción.
+            </p>
+
+            <p>
+                También utilizamos
+                <code>&lt;iframe&gt;</code>
+                para mostrar videos externos y
+                <code>&lt;audio&gt;</code>
+                para reproducir sonidos.
+            </p>
         </aside>
+
     </main>
 
-    <!-- FOOTER: cambia el nombre y el correo antes de entregar. -->
+    <!-- FOOTER: información del estudiante -->
     <footer>
-    <hr>
-   <a href="mailto:erickyunga89@gmail.com">
-    erickyunga89@gmail.com
-   </a>
-    <p>&copy; 2026 - Todos los derechos reservados.</p>
-    <p><a href="#inicio">Volver al inicio de esta página</a></p>
-</footer>
+        <hr>
+
+        <p>
+            Estudiante: Erick Josue Yunga Chimbo<br>
+            Correo:
+            <a href="mailto:erickyunga89@gmail.com">
+                erickyunga89@gmail.com
+            </a>
+        </p>
+
+        <p>&copy; 2026 - Todos los derechos reservados.</p>
+
+        <p>
+            <a href="#inicio">Volver al inicio de esta página</a>
+        </p>
+    </footer>
+
 </body>
 </html>
