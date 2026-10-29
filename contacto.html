@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Ecuavóley: Pasión Ecuatoriana</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- HEADER: encabezado principal -->
+    <header id="inicio">
+        <h1>Ecuavóley: Pasión Ecuatoriana</h1>
+        <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
+    </header>
+
+    <!-- CONTENEDOR FLEXBOX -->
+    <div class="contenedor-flex">
+
+        <!-- NAV: menú de navegación -->
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="posiciones.html">Posiciones</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN: contenido principal -->
+        <main>
+
+            <section>
+                <h2>Formulario de contacto</h2>
+
+                <p>
+                    ¿Tienes alguna pregunta o comentario sobre el
+                    ecuavóley? Completa el siguiente formulario.
+                </p>
+
+                <!-- FORMULARIO: envia datos mediante POST -->
+                <form action="guardar.php" method="POST">
+
+                    <fieldset>
+                        <legend>Información de contacto</legend>
+
+                        <!-- Nombre completo -->
+                        <label for="nombre">Nombre completo:</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            maxlength="100"
+                            required>
+
+                        <!-- Correo electrónico -->
+                        <label for="correo">Correo electrónico:</label>
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            maxlength="150"
+                            required>
+
+                        <!-- Asunto -->
+                        <label for="asunto">Asunto:</label>
+                        <input
+                            type="text"
+                            id="asunto"
+                            name="asunto"
+                            maxlength="150"
+                            required>
+
+                        <!-- Mensaje -->
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            rows="6"
+                            maxlength="2000"
+                            required></textarea>
+
+                        <!-- Botón para enviar -->
+                        <button type="submit">
+                            Enviar mensaje
+                        </button>
+
+                    </fieldset>
+
+                </form>
+
+            </section>
+
+            <!-- Información complementaria -->
+            <aside>
+                <h2>Información importante</h2>
+
+                <p>
+                    Todos los campos del formulario son obligatorios.
+                    Los mensajes se almacenarán en una base de datos
+                    para su posterior consulta.
+                </p>
+            </aside>
+
+        </main>
+
+    </div>
+    <!-- FIN DEL CONTENEDOR FLEXBOX -->
+
+    <!-- FOOTER -->
+    <footer>
+        <hr>
+
+        <p>
+            Estudiante: Erick Josue Yunga Chimbo<br>
+            Correo:
+            <a href="mailto:eyungac3@est.ups.edu.ec">
+                eyungac3@est.ups.edu.ec
+            </a>
+        </p>
+
+        <p>&copy; 2026 - Todos los derechos reservados.</p>
+
+        <p>
+            <a href="#inicio">Volver al inicio de esta página</a>
+        </p>
+    </footer>
+
+</body>
+</html>

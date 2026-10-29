@@ -248,3 +248,70 @@ dt {
 dd {
     margin-bottom: 10px;
 }
+
+/* =====================================
+   FORMULARIO DE CONTACTO
+   ===================================== */
+
+/* Contenedor de campos */
+fieldset {
+    border: 2px solid #196f3d;
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 0;
+}
+
+/* Título del grupo de campos */
+legend {
+    color: #145a32;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Etiquetas del formulario */
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Campos de entrada */
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+/* Cuando el usuario selecciona un campo */
+form input:focus,
+form textarea:focus {
+    outline: 2px solid #27ae60;
+    border-color: #196f3d;
+}
+
+/* Botón de envío */
+form button {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #196f3d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el cursor */
+form button:hover {
+    background-color: #27ae60;
+}
+
+/* Efecto al presionar */
+form button:active {
+    background-color: #145a32;
+}
