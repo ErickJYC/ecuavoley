@@ -1,91 +1,145 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="css/estilos.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reglas | Ecuavóley: Pasión Ecuatoriana</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <!-- HEADER: presenta el sitio web. -->
+
+    <!-- HEADER: encabezado principal del sitio -->
     <header id="inicio">
         <h1>Ecuavóley: Pasión Ecuatoriana</h1>
         <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
     </header>
 
-    <!-- NAV: contiene los enlaces relativos a las cinco páginas. -->
-    <nav aria-label="Navegación principal">
-        <a href="index.html">Inicio</a> |
-        <a href="historia.html">Historia</a> |
-        <a href="reglas.html">Reglas</a> |
-        <a href="posiciones.html">Posiciones</a> |
-        <a href="galeria.html">Galería</a>
-    </nav>
-    <hr>
+    <!-- CONTENEDOR FLEXBOX: menú y contenido -->
+    <div class="contenedor-flex">
 
-    <!-- MAIN: contenido principal y único de esta página. -->
-    <main>
-        <section>
-            <h2>Reglas básicas del ecuavóley</h2>
-            <p>El ecuavóley se juega con dos equipos separados por una red. Las reglas específicas pueden variar según
-                el torneo o la localidad.</p>
-            <h3>Pasos generales de una jugada</h3>
-            <!-- OL: lista ordenada de cuatro elementos. -->
-            <ol>
-                <li>Los equipos se ubican a cada lado de la red.</li>
-                <li>Un jugador realiza el saque para iniciar la jugada.</li>
-                <li>El equipo receptor organiza la devolución del balón.</li>
-                <li>La jugada continúa hasta que ocurre una falta o termina el punto.</li>
-            </ol>
-            <h3>Materiales y elementos necesarios</h3>
-            <!-- UL: lista desordenada de cinco elementos. -->
+        <!-- NAV: menú de navegación -->
+        <nav aria-label="Navegación principal">
             <ul>
-                <li>Una cancha delimitada.</li>
-                <li>Una red colocada en el centro.</li>
-                <li>Un balón adecuado para la práctica.</li>
-                <li>Dos equipos de tres jugadores.</li>
-                <li>Un sistema de puntuación acordado.</li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="posiciones.html">Posiciones</a></li>
+                <li><a href="galeria.html">Galería</a></li>
             </ul>
+        </nav>
 
-            <figure>
-                <img src="images/cancha.png" alt="Cancha de ecuavóley con una red que divide el terreno de juego"
-                    width="400">
-                <figcaption>
-                    Fotografía 3. Cancha utilizada para practicar ecuavóley.
-                </figcaption>
-            </figure>
+        <!-- MAIN: contenido principal -->
+        <main>
 
-        </section>
-        <section>
-            <h2>Conceptos que debes conocer</h2>
-            <dl>
-                <dt><strong>Saque</strong></dt>
-                <dd>Acción con la que comienza una jugada.</dd>
-                <dt><strong>Red</strong></dt>
-                <dd>Elemento que divide los dos campos.</dd>
-                <dt><strong>Punto</strong></dt>
-                <dd>Unidad de puntuación obtenida al ganar una jugada según las reglas aplicadas.</dd>
-                <dt><strong>Equipo</strong></dt>
-                <dd>Conjunto de tres jugadores que colaboran durante el partido.</dd>
-            </dl>
-        </section>
-        <aside>
-            <h2>Importante</h2>
-            <p>Antes de un partido se deben conocer las reglas particulares de la competencia, como la puntuación y los
-                cambios permitidos.</p>
-        </aside>
-    </main>
+            <!-- SECCIÓN: reglas básicas -->
+            <section>
+                <h2>Reglas básicas del ecuavóley</h2>
 
-    <!-- FOOTER: cambia el nombre y el correo antes de entregar. -->
+                <p>
+                    El ecuavóley se juega con dos equipos separados
+                    por una red. Las reglas específicas pueden
+                    variar según el torneo o la localidad.
+                </p>
+
+                <h3>Pasos generales de una jugada</h3>
+
+                <!-- Lista ordenada de cuatro elementos -->
+                <ol class="lista-pasos">
+                    <li>Los equipos se ubican a cada lado de la red.</li>
+                    <li>Un jugador realiza el saque para iniciar la jugada.</li>
+                    <li>El equipo receptor organiza la devolución del balón.</li>
+                    <li>La jugada continúa hasta que ocurre una falta o termina el punto.</li>
+                </ol>
+
+                <h3>Materiales y elementos necesarios</h3>
+
+                <!-- Lista desordenada de cinco elementos -->
+                <ul class="lista-materiales">
+                    <li>Una cancha delimitada.</li>
+                    <li>Una red colocada en el centro.</li>
+                    <li>Un balón adecuado para la práctica.</li>
+                    <li>Dos equipos de tres jugadores.</li>
+                    <li>Un sistema de puntuación acordado.</li>
+                </ul>
+
+                <!-- Imagen con descripción -->
+                <figure>
+                    <img
+                        src="images/cancha.png"
+                        alt="Cancha de ecuavóley con una red que divide el terreno de juego"
+                        width="400">
+
+                    <figcaption>
+                        Fotografía 3. Cancha utilizada para
+                        practicar ecuavóley.
+                    </figcaption>
+                </figure>
+
+            </section>
+
+            <!-- SECCIÓN: conceptos -->
+            <section>
+                <h2>Conceptos que debes conocer</h2>
+
+                <!-- Lista de definiciones -->
+                <dl>
+                    <dt><strong>Saque</strong></dt>
+                    <dd>Acción con la que comienza una jugada.</dd>
+
+                    <dt><strong>Red</strong></dt>
+                    <dd>Elemento que divide los dos campos.</dd>
+
+                    <dt><strong>Punto</strong></dt>
+                    <dd>
+                        Unidad de puntuación obtenida al ganar
+                        una jugada según las reglas aplicadas.
+                    </dd>
+
+                    <dt><strong>Equipo</strong></dt>
+                    <dd>
+                        Conjunto de tres jugadores que colaboran
+                        durante el partido.
+                    </dd>
+                </dl>
+            </section>
+
+            <!-- ASIDE: información complementaria -->
+            <aside>
+                <h2>Importante</h2>
+
+                <p>
+                    Antes de un partido se deben conocer las reglas
+                    particulares de la competencia, como la
+                    puntuación y los cambios permitidos.
+                </p>
+            </aside>
+
+        </main>
+
+    </div>
+    <!-- FIN DEL CONTENEDOR FLEXBOX -->
+
+    <!-- FOOTER: información del estudiante -->
     <footer>
         <hr>
-        <p>Estudiante: [Erick Josue Yunga Chimbo]<br>
-            Correo: <a href="mailto:eyungac3@est.ups.edu.ec">eyungac3@est.ups.edu.ec</a></p>
-        <p>&copy; 2026 - Todos los derechos reservados.</p>
-        <p><a href="#inicio">Volver al inicio de esta página</a></p>
-    </footer>
-</body>
 
+        <p>
+            Estudiante: Erick Josue Yunga Chimbo<br>
+            Correo:
+            <a href="mailto:eyungac3@est.ups.edu.ec">
+                eyungac3@est.ups.edu.ec
+            </a>
+        </p>
+
+        <p>&copy; 2026 - Todos los derechos reservados.</p>
+
+        <p>
+            <a href="#inicio">Volver al inicio de esta página</a>
+        </p>
+    </footer>
+
+</body>
 </html>

@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="css/estilos.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería | Ecuavóley: Pasión Ecuatoriana</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
@@ -16,114 +17,138 @@
         <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
     </header>
 
-    <!-- NAV: navegación entre las cinco páginas -->
-    <nav aria-label="Navegación principal">
-        <a href="index.html">Inicio</a> |
-        <a href="historia.html">Historia</a> |
-        <a href="reglas.html">Reglas</a> |
-        <a href="posiciones.html">Posiciones</a> |
-        <a href="galeria.html">Galería</a>
-    </nav>
+    <!-- CONTENEDOR FLEXBOX: menú y contenido principal -->
+    <div class="contenedor-flex">
 
-    <hr>
+        <!-- NAV: menú de navegación -->
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="posiciones.html">Posiciones</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
 
-    <!-- MAIN: contenido principal -->
-    <main>
+        <!-- MAIN: contenido principal -->
+        <main>
 
-        <!-- SECCIÓN DE FOTOGRAFÍAS -->
-        <section>
-            <h2>Galería de ecuavóley</h2>
+            <!-- SECCIÓN DE FOTOGRAFÍAS -->
+            <section>
+                <h2>Galería de ecuavóley</h2>
 
-            <p>
-                En esta galería se presentan
-                <strong>fotografías reales de ecuavóley</strong>
-                que muestran el balón, los jugadores y
-                las canchas donde se practica este deporte.
-            </p>
+                <p>
+                    En esta galería se presentan
+                    <strong>fotografías reales de ecuavóley</strong>
+                    que muestran el balón, los jugadores y
+                    las canchas donde se practica este deporte.
+                </p>
 
-            <figure>
-                <img src="images/balon.png" alt="Fotografía de un balón Mikasa" width="400">
+                <!-- Contenedor de imágenes con Flexbox -->
+                <div class="galeria-flex">
 
-                <figcaption>
-                    Fotografía 5. Balón Mikasa utilizado para jugar ecuavóley.
-                </figcaption>
-            </figure>
+                    <figure>
+                        <img src="images/balon.png"
+                             alt="Fotografía de un balón Mikasa">
 
-            <figure>
-                <img src="images/partido.png" alt="Jugadores disputando un partido de ecuavóley" width="400">
+                        <figcaption>
+                            Fotografía 5. Balón Mikasa utilizado
+                            para jugar ecuavóley.
+                        </figcaption>
+                    </figure>
 
-                <figcaption>
-                    Fotografía 6. Encuentro de ecuavóley entre equipos.
-                </figcaption>
-            </figure>
+                    <figure>
+                        <img src="images/partido.png"
+                             alt="Jugadores disputando un partido de ecuavóley">
 
-            <figure>
-                <img src="images/cancha.png" alt="Cancha de ecuavóley durante un partido nocturno" width="400">
+                        <figcaption>
+                            Fotografía 6. Encuentro de ecuavóley
+                            entre equipos.
+                        </figcaption>
+                    </figure>
 
-                <figcaption>
-                    Fotografía 7. Cancha de ecuavóley con jugadores y espectadores.
-                </figcaption>
-            </figure>
+                    <figure>
+                        <img src="images/cancha.png"
+                             alt="Cancha de ecuavóley durante un partido nocturno">
 
-        </section>
+                        <figcaption>
+                            Fotografía 7. Cancha de ecuavóley con
+                            jugadores y espectadores.
+                        </figcaption>
+                    </figure>
 
-        <!-- SECCIÓN DEL VIDEO -->
-        <section>
-            <h2>Video de ecuavóley</h2>
+                </div>
+                <!-- FIN DEL CONTENEDOR DE IMÁGENES -->
 
-            <p>
-                En el siguiente video se puede observar
-                cómo se desarrolla un partido de ecuavóley.
-            </p>
+            </section>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/byC-B38Zo18"
-                title="Partido de ecuavóley" allowfullscreen>
-            </iframe>
+            <!-- SECCIÓN DEL VIDEO -->
+            <section>
+                <h2>Video de ecuavóley</h2>
 
-            <p>
-                <a href="https://www.youtube.com/watch?v=byC-B38Zo18" target="_blank" rel="noopener noreferrer">
-                    Ver el video directamente en YouTube
-                </a>
-            </p>
-        </section>
+                <p>
+                    En el siguiente video se puede observar
+                    cómo se desarrolla un partido de ecuavóley.
+                </p>
 
-        <!-- SECCIÓN DEL AUDIO -->
-        <section>
-            <h2>Sonido de silbato</h2>
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/byC-B38Zo18"
+                    title="Partido de ecuavóley"
+                    allowfullscreen>
+                </iframe>
 
-            <p>
-                Escucha el sonido de un silbato deportivo
-                utilizado durante los partidos.
-            </p>
+                <p>
+                    <a href="https://www.youtube.com/watch?v=byC-B38Zo18"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ver el video directamente en YouTube
+                    </a>
+                </p>
+            </section>
 
-            <audio controls>
-                <source src="audio/silbato.wav" type="audio/wav">
-                Tu navegador no admite la reproducción de audio.
-            </audio>
-        </section>
+            <!-- SECCIÓN DEL AUDIO -->
+            <section>
+                <h2>Sonido de silbato</h2>
 
-        <!-- ASIDE: información complementaria -->
-        <aside>
-            <h2>¿Sabías que...?</h2>
+                <p>
+                    Escucha el sonido de un silbato deportivo
+                    utilizado durante los partidos.
+                </p>
 
-            <p>
-                En HTML5, la etiqueta
-                <code>&lt;figure&gt;</code>
-                permite agrupar imágenes y
-                <code>&lt;figcaption&gt;</code>
-                permite agregar una descripción.
-            </p>
+                <audio controls>
+                    <source src="audio/silbato.wav" type="audio/wav">
+                    Tu navegador no admite la reproducción de audio.
+                </audio>
+            </section>
 
-            <p>
-                También utilizamos
-                <code>&lt;iframe&gt;</code>
-                para mostrar videos externos y
-                <code>&lt;audio&gt;</code>
-                para reproducir sonidos.
-            </p>
-        </aside>
+            <!-- ASIDE: información complementaria -->
+            <aside>
+                <h2>¿Sabías que...?</h2>
 
-    </main>
+                <p>
+                    En HTML5, la etiqueta
+                    <code>&lt;figure&gt;</code>
+                    permite agrupar imágenes y
+                    <code>&lt;figcaption&gt;</code>
+                    permite agregar una descripción.
+                </p>
+
+                <p>
+                    También utilizamos
+                    <code>&lt;iframe&gt;</code>
+                    para mostrar videos externos y
+                    <code>&lt;audio&gt;</code>
+                    para reproducir sonidos.
+                </p>
+            </aside>
+
+        </main>
+
+    </div>
+    <!-- FIN DEL CONTENEDOR FLEXBOX -->
 
     <!-- FOOTER: información del estudiante -->
     <footer>
@@ -145,5 +170,4 @@
     </footer>
 
 </body>
-
 </html>

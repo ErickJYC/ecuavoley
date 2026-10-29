@@ -1,75 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="css/estilos.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Ecuavóley: Pasión Ecuatoriana</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <!-- HEADER: presenta el sitio web. -->
+
+    <!-- HEADER: presenta el sitio web -->
     <header id="inicio">
         <h1>Ecuavóley: Pasión Ecuatoriana</h1>
         <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
     </header>
 
-    <!-- NAV: contiene los enlaces relativos a las cinco páginas. -->
-    <nav aria-label="Navegación principal">
-        <a href="index.html">Inicio</a> |
-        <a href="historia.html">Historia</a> |
-        <a href="reglas.html">Reglas</a> |
-        <a href="posiciones.html">Posiciones</a> |
-        <a href="galeria.html">Galería</a>
-    </nav>
-    <hr>
+    <!-- CONTENEDOR FLEXBOX: organiza el menú y el contenido -->
+    <div class="contenedor-flex">
 
-    <!-- MAIN: contenido principal y único de esta página. -->
-    <main>
-        <section aria-labelledby="bienvenida">
-            <h2 id="bienvenida">Bienvenidos al mundo del ecuavóley</h2>
-            <p>El <strong>ecuavóley</strong> es una variante del voleibol practicada especialmente en Ecuador. Es un
-                deporte de equipo en el que la coordinación y la comunicación son fundamentales.</p>
-            <p>En este sitio aprenderás sobre su historia, sus reglas, las posiciones de los jugadores y algunas
-                características de la cancha.</p>
+        <!-- NAV: menú de navegación -->
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="posiciones.html">Posiciones</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
 
-            <figure>
-                <img src="images/partido.png" alt="Jugadores participando en un partido de ecuavóley" width="400">
-                <figcaption>
-                    Fotografía 1. Partido de ecuavóley en Ecuador.
-                </figcaption>
-            </figure>
+        <!-- MAIN: contenido principal de la página -->
+        <main>
 
-        </section>
-        <section aria-labelledby="temas">
-            <h2 id="temas">¿Qué encontrarás aquí?</h2>
-            <article>
-                <h3>Aprende a jugar</h3>
-                <p>Conoce las <a href="reglas.html">reglas básicas</a> y las funciones de los integrantes del equipo.
+            <!-- SECCIÓN DE BIENVENIDA -->
+            <section aria-labelledby="bienvenida">
+
+                <h2 id="bienvenida">
+                    Bienvenidos al mundo del ecuavóley
+                </h2>
+
+                <p>
+                    El <strong>ecuavóley</strong> es una variante del voleibol
+                    practicada especialmente en Ecuador. Es un deporte de
+                    equipo en el que la coordinación y la comunicación
+                    son fundamentales.
                 </p>
-            </article>
-            <article>
-                <h3>Una tradición deportiva</h3>
-                <p>Explora la <a href="historia.html">historia</a> de un deporte que forma parte de la vida comunitaria
-                    ecuatoriana.</p>
-            </article>
-        </section>
-        <aside>
-            <h2>Dato interesante</h2>
-            <p>En el ecuavóley, cada equipo juega habitualmente con <strong>tres personas</strong>, a diferencia del
-                voleibol de sala, que tiene seis jugadores por equipo.</p>
-        </aside>
-    </main>
 
-    <!-- FOOTER: cambia el nombre y el correo antes de entregar. -->
+                <p>
+                    En este sitio aprenderás sobre su historia, sus reglas,
+                    las posiciones de los jugadores y algunas
+                    características de la cancha.
+                </p>
+
+                <!-- Párrafo con clase CSS -->
+                <p class="destacado">
+                    El ecuavóley es un deporte tradicional ecuatoriano
+                    que forma parte de nuestra cultura e identidad.
+                </p>
+
+                <!-- Imagen con descripción -->
+                <figure>
+                    <img src="images/partido.png"
+                         alt="Jugadores participando en un partido de ecuavóley"
+                         width="400">
+
+                    <figcaption>
+                        Fotografía 1. Partido de ecuavóley en Ecuador.
+                    </figcaption>
+                </figure>
+
+            </section>
+
+            <!-- SECCIÓN DE TEMAS -->
+            <section aria-labelledby="temas">
+
+                <h2 id="temas">¿Qué encontrarás aquí?</h2>
+
+                <article>
+                    <h3>Aprende a jugar</h3>
+
+                    <p>
+                        Conoce las
+                        <a href="reglas.html">reglas básicas</a>
+                        y las funciones de los integrantes del equipo.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Una tradición deportiva</h3>
+
+                    <p>
+                        Explora la
+                        <a href="historia.html">historia</a>
+                        de un deporte que forma parte de la vida
+                        comunitaria ecuatoriana.
+                    </p>
+                </article>
+
+            </section>
+
+            <!-- ASIDE: información complementaria -->
+            <aside>
+                <h2>Dato interesante</h2>
+
+                <p>
+                    En el ecuavóley, cada equipo juega habitualmente
+                    con <strong>tres personas</strong>, a diferencia
+                    del voleibol de sala, que tiene seis jugadores
+                    por equipo.
+                </p>
+            </aside>
+
+        </main>
+
+    </div>
+    <!-- FIN DEL CONTENEDOR FLEXBOX -->
+
+    <!-- FOOTER: información del autor -->
     <footer>
-        <hr>
-        <p>Estudiante: [Erick Josue Yunga Chimbo]<br>
-            Correo: <a href="mailto:eyungac3@est.ups.edu.ec">eyungac3@est.ups.edu.ec</a></p>
-        <p>&copy; 2026 - Todos los derechos reservados.</p>
-        <p><a href="#inicio">Volver al inicio de esta página</a></p>
-    </footer>
-</body>
 
+        <hr>
+
+        <p>
+            Estudiante: Erick Josue Yunga Chimbo
+            <br>
+            Correo:
+            <a href="mailto:eyungac3@est.ups.edu.ec">
+                eyungac3@est.ups.edu.ec
+            </a>
+        </p>
+
+        <p>
+            &copy; 2026 - Todos los derechos reservados.
+        </p>
+
+        <p>
+            <a href="#inicio">Volver al inicio de esta página</a>
+        </p>
+
+    </footer>
+
+</body>
 </html>

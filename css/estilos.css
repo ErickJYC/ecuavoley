@@ -5,3 +5,246 @@ body{
     color: #222222;
     background-color: #f2f2f2;
 }
+h1{
+    color: #145a32;
+    text-align: center;
+    font-size: 32px;
+}
+.destacado{
+    background-color: #d5f5e3;
+    padding: 15px;
+    border-radius: 8px;
+}
+#inicio{
+    background-color: #196f3d;
+    color: white;
+    padding: 20px;
+}
+nav a{
+    color:#145a32;
+    text-decoration: none;
+}
+h2, h3 {
+    color: #1e8449;
+    font-weight: bold;
+}
+#inicio h1{
+    color: white;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav li{
+    margin-bottom: 10px;
+}
+nav a{
+    display: block;
+    padding: 10px;
+    background-color: #196f3d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+nav a:hover{
+    background-color: #27ae60;
+}
+
+/* =====================================
+   DISTRIBUCION CON FLEXBOX
+   ===================================== */
+
+/* Contenedor principal */
+.contenedor-flex {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    align-items: flex-start;
+}
+
+/* Menú lateral */
+.contenedor-flex nav {
+    width: 220px;
+    flex-shrink: 0;
+    background-color: #d5f5e3;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Contenido principal */
+.contenedor-flex main {
+    flex: 1;
+    min-width: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Efecto al presionar un enlace */
+nav a:active {
+    background-color: #145a32;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 700px) {
+    .contenedor-flex {
+        flex-direction: column;
+    }
+
+    .contenedor-flex nav {
+        width: auto;
+        align-self: stretch;
+    }
+
+    .contenedor-flex main {
+        align-self: stretch;
+    }
+}
+
+/* =====================================
+   GALERIA DE IMAGENES CON FLEXBOX
+   ===================================== */
+
+/* Contenedor de las fotografías */
+.galeria-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Cada fotografía con su descripción */
+.galeria-flex figure {
+    flex: 1 1 180px;
+    max-width: 260px;
+    min-width: 0;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+/* Imágenes adaptables */
+.galeria-flex img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Descripción de las fotografías */
+.galeria-flex figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Video adaptable */
+iframe {
+    max-width: 100%;
+}
+
+/* Audio adaptable */
+audio {
+    max-width: 100%;
+}
+
+/* =====================================
+   ESTILOS PARA TABLAS
+   ===================================== */
+
+/* Permite desplazamiento horizontal si falta espacio */
+.tabla-contenedor {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Estilos generales de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Título de la tabla */
+table caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #145a32;
+}
+
+/* Bordes y espacios de las celdas */
+th, td {
+    border: 1px solid #999999;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Encabezados de las columnas */
+thead th {
+    background-color: #196f3d;
+    color: white;
+}
+
+/* Encabezados de las filas */
+tbody th {
+    background-color: #d5f5e3;
+    color: #145a32;
+}
+
+/* Efecto sobre las filas */
+tbody tr:hover {
+    background-color: #eafaf1;
+}
+
+/* =====================================
+   ESTILOS PARA LISTAS DE CONTENIDO
+   ===================================== */
+
+/* Lista ordenada */
+.lista-pasos {
+    list-style-type: decimal;
+    padding-left: 30px;
+    margin: 20px 0;
+}
+
+/* Elementos de la lista ordenada */
+.lista-pasos li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+/* Lista desordenada */
+.lista-materiales {
+    list-style-type: square;
+    padding-left: 30px;
+    margin: 20px 0;
+}
+
+/* Elementos de la lista desordenada */
+.lista-materiales li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+/* Lista de definiciones */
+dl {
+    background-color: #eafaf1;
+    padding: 15px;
+    border-left: 4px solid #196f3d;
+}
+
+/* Términos */
+dt {
+    margin-top: 10px;
+    color: #145a32;
+}
+
+/* Definiciones */
+dd {
+    margin-bottom: 10px;
+}

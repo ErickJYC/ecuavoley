@@ -1,75 +1,129 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="css/estilos.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia | Ecuavóley: Pasión Ecuatoriana</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <!-- HEADER: presenta el sitio web. -->
+
+    <!-- HEADER: presenta el sitio web -->
     <header id="inicio">
         <h1>Ecuavóley: Pasión Ecuatoriana</h1>
         <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
     </header>
 
-    <!-- NAV: contiene los enlaces relativos a las cinco páginas. -->
-    <nav aria-label="Navegación principal">
-        <a href="index.html">Inicio</a> |
-        <a href="historia.html">Historia</a> |
-        <a href="reglas.html">Reglas</a> |
-        <a href="posiciones.html">Posiciones</a> |
-        <a href="galeria.html">Galería</a>
-    </nav>
-    <hr>
+    <!-- CONTENEDOR FLEXBOX: menú y contenido principal -->
+    <div class="contenedor-flex">
 
-    <!-- MAIN: contenido principal y único de esta página. -->
-    <main>
-        <section>
-            <h2>Historia y tradición</h2>
-            <p>El ecuavóley es un deporte tradicional del Ecuador. Su práctica se difundió en canchas barriales,
-                espacios públicos y encuentros entre comunidades.</p>
-            <p>No existe una fecha única y universalmente aceptada para su origen. Por ello, en este sitio se presenta
-                su importancia cultural sin atribuirle una fecha exacta de creación.</p>
+        <!-- NAV: menú de navegación -->
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="posiciones.html">Posiciones</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
 
-            <figure>
-                <img src="images/tradicion.png" alt="Personas reunidas alrededor de una cancha de ecuavóley"
-                    width="400">
-                <figcaption>
-                    Fotografía 2. El ecuavóley como parte de la tradición y la comunidad ecuatoriana.
-                </figcaption>
-            </figure>
+        <!-- MAIN: contenido principal de esta página -->
+        <main>
 
-        </section>
-        <section>
-            <h2>Importancia en Ecuador</h2>
-            <article>
-                <h3>Convivencia</h3>
-                <p>Los partidos reúnen a jugadores y espectadores, fortaleciendo la convivencia y la participación
-                    comunitaria.</p>
-            </article>
-            <article>
-                <h3>Identidad</h3>
-                <p>Es una práctica deportiva vinculada con la <em>identidad cultural ecuatoriana</em> y con las
-                    tradiciones locales.</p>
-            </article>
-        </section>
-        <aside>
-            <h2>Para reflexionar</h2>
-            <p>Un deporte puede formar parte de la cultura de un país aunque no se practique de manera profesional.</p>
-        </aside>
-    </main>
+            <!-- SECCIÓN: historia y tradición -->
+            <section>
+                <h2>Historia y tradición</h2>
 
-    <!-- FOOTER: cambia el nombre y el correo antes de entregar. -->
+                <p>
+                    El ecuavóley es un deporte tradicional del Ecuador.
+                    Su práctica se difundió en canchas barriales,
+                    espacios públicos y encuentros entre comunidades.
+                </p>
+
+                <p>
+                    No existe una fecha única y universalmente aceptada
+                    para su origen. Por ello, en este sitio se presenta
+                    su importancia cultural sin atribuirle una fecha
+                    exacta de creación.
+                </p>
+
+                <figure>
+                    <img
+                        src="images/tradicion.png"
+                        alt="Personas reunidas alrededor de una cancha de ecuavóley"
+                        width="400">
+
+                    <figcaption>
+                        Fotografía 2. El ecuavóley como parte de la
+                        tradición y la comunidad ecuatoriana.
+                    </figcaption>
+                </figure>
+
+            </section>
+
+            <!-- SECCIÓN: importancia cultural -->
+            <section>
+                <h2>Importancia en Ecuador</h2>
+
+                <article>
+                    <h3>Convivencia</h3>
+
+                    <p>
+                        Los partidos reúnen a jugadores y espectadores,
+                        fortaleciendo la convivencia y la participación
+                        comunitaria.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Identidad</h3>
+
+                    <p>
+                        Es una práctica deportiva vinculada con la
+                        <em>identidad cultural ecuatoriana</em>
+                        y con las tradiciones locales.
+                    </p>
+                </article>
+
+            </section>
+
+            <!-- ASIDE: información complementaria -->
+            <aside>
+                <h2>Para reflexionar</h2>
+
+                <p>
+                    Un deporte puede formar parte de la cultura de un país
+                    aunque no se practique de manera profesional.
+                </p>
+            </aside>
+
+        </main>
+
+    </div>
+    <!-- FIN DEL CONTENEDOR FLEXBOX -->
+
+    <!-- FOOTER: información del estudiante -->
     <footer>
         <hr>
-        <p>Estudiante: [Erick Josue Yunga Chimbo]<br>
-            Correo: <a href="mailto:eyungac3@est.ups.edu.ec">eyungac3@est.ups.edu.ec</a></p>
-        <p>&copy; 2026 - Todos los derechos reservados.</p>
-        <p><a href="#inicio">Volver al inicio de esta página</a></p>
-    </footer>
-</body>
 
+        <p>
+            Estudiante: Erick Josue Yunga Chimbo<br>
+            Correo:
+            <a href="mailto:eyungac3@est.ups.edu.ec">
+                eyungac3@est.ups.edu.ec
+            </a>
+        </p>
+
+        <p>&copy; 2026 - Todos los derechos reservados.</p>
+
+        <p>
+            <a href="#inicio">Volver al inicio de esta página</a>
+        </p>
+    </footer>
+
+</body>
 </html>

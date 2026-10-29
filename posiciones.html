@@ -1,98 +1,164 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="css/estilos.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posiciones | Ecuavóley: Pasión Ecuatoriana</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <!-- HEADER: presenta el sitio web. -->
+
+    <!-- HEADER: encabezado principal del sitio -->
     <header id="inicio">
         <h1>Ecuavóley: Pasión Ecuatoriana</h1>
         <p>Un sitio educativo sobre este deporte tradicional del Ecuador.</p>
     </header>
 
-    <!-- NAV: contiene los enlaces relativos a las cinco páginas. -->
-    <nav aria-label="Navegación principal">
-        <a href="index.html">Inicio</a> |
-        <a href="historia.html">Historia</a> |
-        <a href="reglas.html">Reglas</a> |
-        <a href="posiciones.html">Posiciones</a> |
-        <a href="galeria.html">Galería</a>
-    </nav>
-    <hr>
+    <!-- CONTENEDOR FLEXBOX: menú y contenido -->
+    <div class="contenedor-flex">
 
-    <!-- MAIN: contenido principal y único de esta página. -->
-    <main>
-        <section>
-            <h2>Posiciones de los jugadores</h2>
-            <p>En el ecuavóley se reconocen habitualmente tres funciones: <strong>colocador</strong>,
-                <strong>servidor</strong> y <strong>volador</strong>.</p>
+        <!-- NAV: navegación principal -->
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="reglas.html">Reglas</a></li>
+                <li><a href="posiciones.html">Posiciones</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
 
-            <figure>
-                <img src="images/posiciones.png" alt="Posiciones de los jugadores de ecuavóley" width="400">
-                <figcaption>
-                    Figura 4. Posiciones del ecuavóley:
-                    colocador, servidor y volador.
-                </figcaption>
-            </figure>
+        <!-- MAIN: contenido principal -->
+        <main>
 
-        </section>
-        <section>
-            <h2>Tabla de funciones</h2>
-            <!-- TABLE, THEAD y TBODY: estructura de una tabla de datos. -->
-            <table border="1">
-                <caption>Funciones habituales en el ecuavóley</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Posición</th>
-                        <th scope="col">Función principal</th>
-                        <th scope="col">Habilidad importante</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Colocador</th>
-                        <td>Organizar el ataque y enviar el balón al campo contrario.</td>
-                        <td>Precisión y control.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Servidor</th>
-                        <td>Apoyar el armado de las jugadas y el ataque.</td>
-                        <td>Coordinación.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Volador</th>
-                        <td>Defender el campo y recuperar balones difíciles.</td>
-                        <td>Reflejos y agilidad.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2>Trabajo en equipo</h2>
-            <article>
-                <h3>Comunicación</h3>
-                <p>Los jugadores deben hablar entre sí para evitar confusiones durante la recepción y la defensa.</p>
-            </article>
-        </section>
-        <aside>
-            <h2>Observación</h2>
-            <p>Las responsabilidades exactas pueden variar según la estrategia de cada equipo.</p>
-        </aside>
-    </main>
+            <!-- SECCIÓN: posiciones -->
+            <section>
+                <h2>Posiciones de los jugadores</h2>
 
-    <!-- FOOTER: cambia el nombre y el correo antes de entregar. -->
+                <p>
+                    En el ecuavóley se reconocen habitualmente
+                    tres funciones:
+                    <strong>colocador</strong>,
+                    <strong>servidor</strong> y
+                    <strong>volador</strong>.
+                </p>
+
+                <figure>
+                    <img
+                        src="images/posiciones.png"
+                        alt="Posiciones de los jugadores de ecuavóley"
+                        width="400">
+
+                    <figcaption>
+                        Figura 4. Posiciones del ecuavóley:
+                        colocador, servidor y volador.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <!-- SECCIÓN: tabla de funciones -->
+            <section>
+                <h2>Tabla de funciones</h2>
+
+                <!-- Tabla de posiciones -->
+                <div class="tabla-contenedor">
+                    <table>
+                        <caption>
+                            Funciones habituales en el ecuavóley
+                        </caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Posición</th>
+                                <th scope="col">Función principal</th>
+                                <th scope="col">Habilidad importante</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">Colocador</th>
+                                <td>
+                                    Organizar el ataque y enviar el balón
+                                    al campo contrario.
+                                </td>
+                                <td>Precisión y control.</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Servidor</th>
+                                <td>
+                                    Apoyar el armado de las jugadas
+                                    y el ataque.
+                                </td>
+                                <td>Coordinación.</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Volador</th>
+                                <td>
+                                    Defender el campo y recuperar
+                                    balones difíciles.
+                                </td>
+                                <td>Reflejos y agilidad.</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: trabajo en equipo -->
+            <section>
+                <h2>Trabajo en equipo</h2>
+
+                <article>
+                    <h3>Comunicación</h3>
+
+                    <p>
+                        Los jugadores deben hablar entre sí
+                        para evitar confusiones durante
+                        la recepción y la defensa.
+                    </p>
+                </article>
+            </section>
+
+            <!-- ASIDE: información complementaria -->
+            <aside>
+                <h2>Observación</h2>
+
+                <p>
+                    Las responsabilidades exactas pueden variar
+                    según la estrategia de cada equipo.
+                </p>
+            </aside>
+
+        </main>
+
+    </div>
+    <!-- FIN DEL CONTENEDOR FLEXBOX -->
+
+    <!-- FOOTER: información del estudiante -->
     <footer>
         <hr>
-        <p>Estudiante: [Erick Josue Yunga Chimbo]<br>
-            Correo: <a href="mailto:eyungac3@est.ups.edu.ec">eyungac3@est.ups.edu.ec</a></p>
-        <p>&copy; 2026 - Todos los derechos reservados.</p>
-        <p><a href="#inicio">Volver al inicio de esta página</a></p>
-    </footer>
-</body>
 
+        <p>
+            Estudiante: Erick Josue Yunga Chimbo<br>
+            Correo:
+            <a href="mailto:eyungac3@est.ups.edu.ec">
+                eyungac3@est.ups.edu.ec
+            </a>
+        </p>
+
+        <p>&copy; 2026 - Todos los derechos reservados.</p>
+
+        <p>
+            <a href="#inicio">Volver al inicio de esta página</a>
+        </p>
+    </footer>
+
+</body>
 </html>
