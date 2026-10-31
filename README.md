@@ -1,102 +1,129 @@
 # Ecuavóley: Pasión Ecuatoriana
 
-## Descripción del proyecto
+Sitio web educativo sobre el ecuavóley, desarrollado como parte de la asignatura **Programación de Plataformas Web** de la **Universidad Politécnica Salesiana (UPS)**.
 
-**Ecuavóley: Pasión Ecuatoriana** es un sitio web educativo e informativo desarrollado como parte de la asignatura **Programación de Plataformas Web**.
+**Estudiante:** Erick Josue Yunga Chimbo  
+**Año:** 2026
 
-El proyecto tiene como finalidad dar a conocer el ecuavóley, un deporte tradicional del Ecuador, mediante información sobre su historia, reglas, posiciones de los jugadores y fotografías relacionadas con su práctica.
+## Descripción
 
-El sitio fue desarrollado utilizando únicamente **HTML5**, sin hojas de estilo CSS, JavaScript ni frameworks, con el propósito de aplicar correctamente las etiquetas HTML y la estructura semántica de una página web.
+El proyecto presenta información sobre el ecuavóley y permite enviar mensajes desde un formulario de contacto. En el entorno local incluye una base de datos para almacenar los mensajes y un acceso de administrador para consultarlos.
 
-## Objetivos
+## Tecnologías
 
-**Objetivo general**
+- HTML5 para la estructura de las páginas.
+- CSS3 y Flexbox para los estilos y el diseño adaptable.
+- PHP para procesar formularios, validar datos y gestionar sesiones.
+- MariaDB y MySQLi para almacenar y consultar mensajes.
+- XAMPP (Apache en el puerto 8080) como entorno local.
+- Git y GitHub para control de versiones.
 
-Desarrollar un sitio web informativo sobre el ecuavóley utilizando HTML5 y aplicando correctamente las etiquetas semánticas, los enlaces y los recursos multimedia.
+## Secciones del sitio
 
-**Objetivos específicos**
+- **Inicio:** presentación del ecuavóley.
+- **Historia:** antecedentes e importancia cultural.
+- **Reglas:** información sobre la práctica del deporte.
+- **Posiciones:** funciones de los jugadores.
+- **Galería:** fotografías, video y audio.
+- **Contacto:** formulario para enviar consultas.
 
-- Implementar una estructura HTML5 organizada y semántica.
-- Crear cinco páginas web conectadas mediante enlaces relativos.
-- Presentar información sobre la historia, las reglas y las posiciones del ecuavóley.
-- Incorporar fotografías, tablas y listas para organizar el contenido.
-- Integrar recursos multimedia mediante las etiquetas `audio` e `iframe`.
-- Publicar el proyecto mediante GitHub Pages.
+## Estructura principal
 
-## Estructura del sitio web
+```text
+ecuavoley-html5/
+├── index.html
+├── historia.html
+├── reglas.html
+├── posiciones.html
+├── galeria.html
+├── contacto.html
+├── conexion.php
+├── guardar.php
+├── consultar.php
+├── login.php
+├── logout.php
+├── css/
+│   └── estilos.css
+├── images/
+├── audio/
+├── database/
+│   └── ecuavoley_db.sql
+├── .gitignore
+└── README.md
+```
 
-El proyecto está compuesto por cinco páginas principales:
+Los archivos privados **no pertenecen al repositorio público**:
 
-| Archivo | Descripción |
-|---|---|
-| `index.html` | Página principal y presentación del ecuavóley. |
-| `historia.html` | Información sobre la historia y la tradición de este deporte. |
-| `reglas.html` | Explicación de las reglas básicas del ecuavóley. |
-| `posiciones.html` | Descripción de las posiciones y funciones de los jugadores. |
-| `galeria.html` | Galería de fotografías, video de YouTube y audio de un silbato deportivo. |
+```text
+C:/xampp/config-privada/
+├── config.local.php   # Credenciales de MariaDB
+└── admin.php          # Usuario y hash de contraseña del administrador
+```
 
-## Tecnologías utilizadas
+## Ejecutar en Windows con XAMPP
 
-- **HTML5:** estructura y contenido de las páginas.
-- **Visual Studio Code:** editor de código fuente.
-- **Git:** control de versiones del proyecto.
-- **GitHub:** alojamiento del repositorio.
-- **GitHub Pages:** publicación del sitio web.
+1. Colocar el proyecto en `C:/xampp/htdocs/ecuavoley-html5`.
+2. Iniciar **Apache** y **MySQL/MariaDB** desde XAMPP.
+3. Abrir phpMyAdmin e importar `database/ecuavoley_db.sql` para crear la base de datos y la tabla `mensajes`.
+4. Crear un usuario de MariaDB exclusivo para el proyecto y otorgarle los permisos mínimos necesarios (`SELECT` e `INSERT`) sobre `ecuavoley_db`.
+5. Crear localmente `C:/xampp/config-privada/config.local.php` con las claves `servidor`, `usuario`, `contrasena` y `base_datos`, utilizando los datos de acceso del entorno local.
+6. Crear `C:/xampp/config-privada/admin.php` con el usuario administrador y un hash generado mediante `password_hash()`; no almacenar la contraseña en texto plano.
+7. Comprobar que las rutas privadas utilizadas en `conexion.php` y `login.php` coincidan con la ubicación real de esos archivos.
+8. Abrir `http://localhost:8080/ecuavoley-html5/`.
 
-No se utilizaron CSS, JavaScript ni frameworks, debido a que el proyecto está enfocado en el aprendizaje de HTML5.
+**Nota:** el archivo SQL crea la estructura; no crea automáticamente las cuentas y los archivos privados requeridos por PHP.
 
-## Elementos HTML5 implementados
+## Formulario de contacto
 
-Durante el desarrollo se utilizaron las siguientes etiquetas:
+El formulario envía los datos a `guardar.php`, donde se validan antes de almacenarlos en MariaDB.
 
-| Etiqueta | Función |
-|---|---|
-| `<header>` | Encabezado del sitio web. |
-| `<nav>` | Menú de navegación. |
-| `<main>` | Contenido principal de cada página. |
-| `<section>` | Organización del contenido por secciones. |
-| `<article>` | Contenido informativo independiente. |
-| `<aside>` | Información complementaria. |
-| `<footer>` | Información del estudiante y derechos reservados. |
-| `<figure>` y `<figcaption>` | Presentación y descripción de imágenes. |
-| `<table>`, `<thead>` y `<tbody>` | Organización de información en tablas. |
-| `<ul>`, `<ol>` y `<li>` | Listas ordenadas y no ordenadas. |
-| `<a>` | Hipervínculos internos y externos. |
-| `<img>` | Incorporación de fotografías. |
-| `<audio>` | Reproducción de un archivo de sonido. |
-| `<iframe>` | Integración de un video de YouTube. |
+| Campo | Longitud máxima validada |
+|---|---:|
+| Nombre | 100 caracteres |
+| Correo | 150 caracteres |
+| Asunto | 150 caracteres |
+| Mensaje | 2000 caracteres |
 
+También se verifican los campos obligatorios y el formato del correo. Durante las pruebas se rechazaron entradas que superaban estos límites y direcciones de correo inválidas.
 
-## Visualización del proyecto
+## Consulta y autenticación
 
-**Sitio web publicado en GitHub Pages:**
+- `login.php` recibe las credenciales del administrador y verifica la contraseña mediante `password_verify()`.
+- `consultar.php` exige una sesión de administrador autenticada y muestra los mensajes registrados.
+- `logout.php` limpia y destruye la sesión antes de redirigir al inicio de sesión.
+- `conexion.php` carga la configuración de base de datos desde una carpeta fuera de `htdocs`.
 
-https://erickjyc.github.io/ecuavoley/
+## Seguridad y limitaciones
 
-**Repositorio de GitHub:**
+- No publicar `config.local.php`, `admin.php`, contraseñas ni volcados con datos personales reales.
+- `.gitignore` excluye el archivo `config.local.php` local del repositorio.
+- El usuario de MariaDB debe tener únicamente los permisos requeridos.
+- Antes de permitir acceso desde Internet, revisar la configuración de sesiones, los límites de intentos de inicio de sesión y la protección del entorno XAMPP.
+- Las rutas absolutas `C:/xampp/...` son específicas del equipo local y deben adaptarse al entorno de despliegue.
 
-https://github.com/ErickJYC/ecuavoley
+## Publicación
 
+**Repositorio:** https://github.com/ErickJYC/ecuavoley  
+**Versión estática (GitHub Pages):** https://erickjyc.github.io/ecuavoley/
 
-## Resultados del proyecto
+GitHub Pages publica HTML, CSS e imágenes, pero **no ejecuta PHP ni MariaDB**. Las funciones de formulario con almacenamiento, login y consulta están disponibles en el servidor local XAMPP. Para compartir temporalmente el servidor local se estudiará ngrok después de completar las verificaciones de seguridad.
 
-Con el desarrollo de este sitio web se logró aplicar los fundamentos de HTML5 mediante la creación de páginas interconectadas, la organización semántica del contenido y la integración de diferentes recursos multimedia.
+## Control de versiones
 
-Además, se utilizaron Git y GitHub para administrar las versiones del proyecto y GitHub Pages para permitir su acceso público mediante Internet.
+Se utiliza Git con commits identificados mediante el formato `FIX(###-UPS)`. El commit **`FIX(015-UPS)`** incorporó los archivos PHP, el script SQL, el inicio y cierre de sesión y las mejoras de configuración.
+
+## Estado del desarrollo
+
+- [x] Páginas informativas HTML5.
+- [x] Estilos CSS y pruebas responsive.
+- [x] Formulario y validaciones del lado del servidor.
+- [x] Persistencia y consulta de mensajes en MariaDB.
+- [x] Autenticación y cierre de sesión del administrador.
+- [x] Cambios publicados en el repositorio.
+- [ ] Revisión final de seguridad previa a ngrok.
+- [ ] Pruebas del acceso temporal mediante ngrok.
 
 ## Autor
 
-**Erick Josue Yunga Chimbo**
-
-**Asignatura:** Programación de Plataformas Web
-
-**Carrera:** Ciencias de la Computación
-
-**Universidad:** Universidad Politécnica Salesiana
-
-**Correo electrónico:** 
-eyungac3@est.ups.edu.ec
-
----
-
-© 2026 - Todos los derechos reservados.
+**Erick Josue Yunga Chimbo**  
+Universidad Politécnica Salesiana — 2026.
