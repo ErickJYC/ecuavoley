@@ -1,7 +1,8 @@
 
 <?php
-// Iniciar la sesión del usuario
-session_start();
+// Cargar la configuración compartida de sesiones
+require_once __DIR__ . "/sesion.php";
+
 
 // Si ya inició sesión, enviarlo a consultar.php
 if (isset($_SESSION["admin_autenticado"]) &&
@@ -13,32 +14,127 @@ if (isset($_SESSION["admin_autenticado"]) &&
 // Mensaje de error que se mostrará al usuario
 $error = "";
 
+
 // Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $usuario = $_POST["usuario"] ?? "";
     $contrasena = $_POST["contrasena"] ?? "";
 
-    // Cargar credenciales privadas del administrador
-    $admin = require "C:/xampp/config-privada/admin.php";
+    // Configuración del límite de intentos
+    $maxIntentos = 5;
+    $tiempoBloqueo = 300; // 5 minutos
+    $ahora = time();
 
-    // Comprobar usuario y contraseña
-    if (
-        hash_equals($admin["usuario"], $usuario) &&
-        password_verify($contrasena, $admin["password_hash"])
-    ) {
-        // Regenerar el ID de sesión por seguridad
+    // Identificar la dirección IP del visitante
+    $ip = $_SERVER["REMOTE_ADDR"] ?? "desconocida";
+
+    // Archivo privado para registrar sus intentos
+    $archivo = "C:/xampp/config-privada/login-intentos/"
+             . hash("sha256", $ip) . ".json";
+
+    $autenticado = false;
+
+    // Abrir archivo sin borrar su contenido
+    $fp = @fopen($archivo, "c+");
+
+    if ($fp === false || !flock($fp, LOCK_EX)) {
+        error_log("No se pudo registrar el intento de acceso.");
+        $error = "No se puede procesar el acceso en este momento.";
+
+        if ($fp !== false) {
+            fclose($fp);
+        }
+
+    } else {
+
+        // Leer el registro actual
+        rewind($fp);
+        $datos = json_decode(stream_get_contents($fp), true);
+
+        if (!is_array($datos)) {
+            $datos = [];
+        }
+
+        $intentos = (int) ($datos["intentos"] ?? 0);
+        $inicio = (int) ($datos["inicio"] ?? $ahora);
+        $bloqueadoHasta = (int) ($datos["bloqueado_hasta"] ?? 0);
+
+        // Reiniciar después del periodo de cinco minutos
+        if ($ahora - $inicio >= $tiempoBloqueo &&
+            $bloqueadoHasta <= $ahora) {
+            $intentos = 0;
+            $inicio = $ahora;
+            $bloqueadoHasta = 0;
+        }
+
+        if ($bloqueadoHasta > $ahora) {
+
+            $error = "Demasiados intentos. Intenta nuevamente más tarde.";
+
+        } else {
+
+            // Cargar credenciales privadas
+            $admin = require "C:/xampp/config-privada/admin.php";
+
+            // Comprobar credenciales
+            $autenticado =
+                hash_equals($admin["usuario"], $usuario) &&
+                password_verify(
+                    $contrasena,
+                    $admin["password_hash"]
+                );
+
+            if ($autenticado) {
+                // Restablecer contador
+                $intentos = 0;
+                $inicio = $ahora;
+                $bloqueadoHasta = 0;
+
+            } else {
+                $intentos++;
+
+                if ($intentos >= $maxIntentos) {
+                    $bloqueadoHasta = $ahora + $tiempoBloqueo;
+                    $error = "Demasiados intentos. Intenta nuevamente más tarde.";
+                } else {
+                    $error = "Usuario o contraseña incorrectos.";
+                }
+            }
+        }
+
+        // Guardar los intentos en el servidor
+        $registro = json_encode([
+            "intentos" => $intentos,
+            "inicio" => $inicio,
+            "bloqueado_hasta" => $bloqueadoHasta
+        ]);
+
+        rewind($fp);
+        $guardado = ftruncate($fp, 0) &&
+                    fwrite($fp, $registro) === strlen($registro) &&
+                    fflush($fp);
+
+        flock($fp, LOCK_UN);
+        fclose($fp);
+
+        if (!$guardado) {
+            $autenticado = false;
+            $error = "No se puede procesar el acceso en este momento.";
+            error_log("Error al guardar intentos de acceso.");
+        }
+    }
+
+    if ($autenticado) {
+        // Regenerar sesión después de autenticarse
         session_regenerate_id(true);
-
         $_SESSION["admin_autenticado"] = true;
 
-        // Redirigir al administrador
         header("Location: consultar.php");
         exit;
     }
-
-    $error = "Usuario o contraseña incorrectos.";
 }
+
 ?>
 
 <!DOCTYPE html>

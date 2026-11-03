@@ -4,34 +4,36 @@
 =========================================
 CIERRE DE SESIÓN - ECUAVÓLEY
 =========================================
-Este archivo permite cerrar la sesión
-del administrador de manera segura.
+Cierra la sesión del administrador,
+elimina sus datos y borra la cookie.
 */
 
-// Recuperar la sesión actual
-session_start();
+// Cargar la configuración compartida
+require_once __DIR__ . "/sesion.php";
 
-// Vaciar las variables de sesión
+// Vaciar los datos de la sesión
 $_SESSION = [];
 
 // Eliminar la cookie de sesión
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
 
-    setcookie(
-        session_name(),
-        "",
-        time() - 42000,
-        $params["path"],
-        $params["domain"],
-        $params["secure"],
-        $params["httponly"]
-    );
+    setcookie(session_name(), "", [
+        "expires" => time() - 42000,
+        "path" => $params["path"],
+        "domain" => $params["domain"],
+        "secure" => $params["secure"],
+        "httponly" => $params["httponly"],
+        "samesite" => $params["samesite"] ?? "Lax"
+    ]);
 }
 
-// Destruir la sesión
+// Destruir la sesión del servidor
 session_destroy();
 
-// Regresar al inicio de sesión
+// Evitar almacenar la respuesta en caché
+header("Cache-Control: no-store");
+
+// Volver al formulario de acceso
 header("Location: login.php");
 exit;

@@ -8,8 +8,7 @@ Esta página solamente puede ser utilizada
 por el administrador que haya iniciado sesión.
 */
 
-// Iniciar la sesión PHP
-session_start();
+require_once __DIR__ . "/sesion.php";
 
 // Verificar si el administrador inició sesión
 if (!isset($_SESSION["admin_autenticado"]) ||
