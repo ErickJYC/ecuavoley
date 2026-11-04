@@ -1,24 +1,5 @@
 
 <?php
-/*
-=====================================================
-CONEXIÓN A LA BASE DE DATOS - ECUAVÓLEY
-=====================================================
-
-Este archivo establece la conexión entre PHP y
-la base de datos MariaDB mediante MySQLi.
-
-AHORA:
-Se utiliza el usuario ecuavoley_app y las
-credenciales se cargan desde config.local.php.
-
-Esto permite separar la configuración privada
-del código principal de la aplicación.
-=====================================================
-*/
-// ANTES: La configuración estaba dentro de htdocs.
-// $config = require __DIR__ . "/config.local.php";
-
 
 // Cargar credenciales desde una carpeta fuera de htdocs
 $config = require "C:/xampp/config-privada/config.local.php";

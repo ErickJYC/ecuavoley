@@ -1,12 +1,4 @@
 <?php
-/*
-=========================================
-PROTECCIÓN DE LA PÁGINA DE CONSULTAS
-=========================================
-
-Esta página solamente puede ser utilizada
-por el administrador que haya iniciado sesión.
-*/
 
 require_once __DIR__ . "/sesion.php";
 

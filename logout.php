@@ -1,12 +1,5 @@
 
 <?php
-/*
-=========================================
-CIERRE DE SESIÓN - ECUAVÓLEY
-=========================================
-Cierra la sesión del administrador,
-elimina sus datos y borra la cookie.
-*/
 
 // Cargar la configuración compartida
 require_once __DIR__ . "/sesion.php";
